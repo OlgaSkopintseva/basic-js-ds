@@ -64,19 +64,19 @@ class BinarySearchTree {
 
   find(data) {
     return findWithin(this._root, data);
-    function findWithin(node, value) {
+    function findWithin(node, data) {
       if (!node) {
         return null;
       }
 
-      if (value === node.value) {
+      if (data === node.data) {
         return node;
       }
 
-      if (value < node.value) {
-        return findWithin(node.left, value);
+      if (data < node.value) {
+        return findWithin(node.left, data);
       } else {
-        return findWithin(node.right, value);
+        return findWithin(node.right, data);
       }
     }
   }
